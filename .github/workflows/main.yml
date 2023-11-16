@@ -13,7 +13,7 @@ jobs:
       - name: "Login to Docker Hub"
         run: docker login --username ${{ secrets.DOCKERUSERNAME }} --password  ${{secrets.DOCKERTOKEN}}
       - name : "Building Docker image"
-        run : docker bulid -it  ${{ secrets.DOCKERUSERNAME }}/mygithubdockerimage
+        run : docker bulid -t  ${{ secrets.DOCKERUSERNAME }}/mygithubdockerimage
       - name: "pushing to docker hub"
         run : docker push  ${{ secrets.DOCKERUSERNAME }}/mygithubdockerimage
     
