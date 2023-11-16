@@ -14,6 +14,6 @@ jobs:
         run: docker login --username ${{ secrets.DOCKERUSERNAME }} --password  ${{secrets.DOCKERTOKEN}}
       - name : "Building Docker image"
         run : docker bulid -it  ${{ secrets.DOCKERUSERNAME }}/mygithubdockerimage
-      - name : "pushing to docker hub"
+      - name: "pushing to docker hub"
         run : docker push  ${{ secrets.DOCKERUSERNAME }}/mygithubdockerimage
     
